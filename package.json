@@ -1,21 +1,36 @@
 {
-  "name": "project-management-system-backend",
+  "name": "project-management-backend",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Backend for Project Management System using Node.js and Sequelize",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon app.js"
+    "start": "node app.js",
+    "dev": "nodemon app.js",
+    "test": "jest",
+    "migrate": "sequelize-cli db:migrate",
+    "migrate:undo": "sequelize-cli db:migrate:undo",
+    "seed": "sequelize-cli db:seed:all",
+    "seed:undo": "sequelize-cli db:seed:undo:all"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "dependencies": {
-    "express": "^5.1.0",
-    "mysql2": "^3.14.1",
-    "sequelize": "^6.37.7"
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "helmet": "^7.0.0",
+    "jsonwebtoken": "^9.0.1",
+    "morgan": "^1.10.0",
+    "mysql2": "^3.6.0",
+    "sequelize": "^6.35.1",
+    "uuid": "^9.0.0"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.1",
+    "sequelize-cli": "^6.6.0",
+    "supertest": "^6.3.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
   }
 }
