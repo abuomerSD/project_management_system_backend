@@ -1,6 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
   const Comment = sequelize.define(
-    'Comment',
+    "Comment",
     {
       id: {
         type: DataTypes.UUID,
@@ -14,13 +14,13 @@ module.exports = (sequelize, DataTypes) => {
     },
     {
       timestamps: true,
-      createdAt: 'created_at',
+      createdAt: "created_at",
     }
   );
 
-  Comment.associate = models => {
-    Comment.belongsTo(models.Task, { foreignKey: 'task_id', as: 'task' });
-    Comment.belongsTo(models.User, { foreignKey: 'user_id', as: 'author' });
+  Comment.associate = (models) => {
+    Comment.belongsTo(models.Task, { foreignKey: "task_id", as: "task" });
+    Comment.belongsTo(models.User, { foreignKey: "user_id", as: "author" });
   };
 
   return Comment;
